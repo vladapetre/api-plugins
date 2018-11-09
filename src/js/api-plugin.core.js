@@ -11,24 +11,25 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var Core = /** @class */ (function () {
+var Plugin = /** @class */ (function () {
     /**
      *
      */
-    function Core(options) {
+    function Plugin(options) {
         this._defaults = {
             initClass: "api",
             initContainerId: "api"
         };
-        debugger;
         this._settings = __assign({}, this._defaults, options);
         var container = document.getElementById(this._settings.initContainerId);
-        if (container != undefined && container != null)
-            container.classList.add(this._settings.initClass);
+        if (container != undefined && container != null) {
+            this._container = container;
+            this._container.classList.add(this._settings.initClass);
+        }
         else
             throw ('Element with selector ' + this._settings.initContainerId + ' not found! Plugin cannot initialize!');
     }
-    return Core;
+    return Plugin;
 }());
-exports.Core = Core;
+exports.Plugin = Plugin;
 //# sourceMappingURL=api-plugin.core.js.map

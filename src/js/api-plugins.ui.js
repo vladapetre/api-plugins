@@ -31,13 +31,7 @@ var UI = /** @class */ (function (_super) {
         console.log(_this);
         return _this;
     }
-    UI.prototype.createElement = function (tag, innerHtml) {
-        var element = document.createElement(tag);
-        element.innerHTML = innerHtml;
-        element.classList.add(this._settings.initClass);
-        return element;
-    };
     return UI;
-}(core.Core));
+}(core.Plugin));
 exports.UI = UI;
 //# sourceMappingURL=api-plugins.ui.js.map

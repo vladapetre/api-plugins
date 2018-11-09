@@ -1,18 +1,13 @@
 import * as core from './api-plugin.core'
 
-export class UI extends core.Core {
+export abstract class UI extends core.Plugin {
     /**
      *
      */
-    constructor(options?: core.CoreSettings) {
+    constructor(options?: core.Settings) {
         super(options);
         console.log(this);
     }
 
-    public createElement(tag: string, innerHtml: string) {
-        var element = document.createElement(tag);
-        element.innerHTML = innerHtml;
-        element.classList.add(this._settings.initClass);
-        return element;
-    }
+    protected abstract loadFromDataAttributes(): core.Settings;
 }
